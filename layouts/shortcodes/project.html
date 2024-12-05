@@ -1,0 +1,25 @@
+{{ if .Get "separator" }}
+  <div class="initial row project with-separator">
+    <hr> <!-- 这里插入分割线 -->
+    <div class="col-md-4 left-section">
+      <img src="{{ .Get "image" }}" alt="{{ .Get "title" }}" class="img-fluid project-img">
+    </div>
+    <div class="col-md-8 right-section">
+      <h3>{{ .Get "title" }}</h3>
+      <p class="no-margin">{{ .Get "authors"   | safeHTML }}</p>
+      <p class="no-margin">{{ .Get "description"  | safeHTML }}</p>
+    </div>
+  </div>
+{{ else }}
+  <div class="initial row project without-separator">
+    <div class="col-md-4 left-section">
+      <img src="{{ .Get "image" }}" alt="{{ .Get "title" }}" class="img-fluid project-img">
+    </div>
+    <div class="col-md-8 right-section">
+      <h3>{{ .Get "title" }}</h3>
+      <p class="no-margin">{{ .Get "authors"   | safeHTML }}</p>
+      <p class="no-margin">{{ .Get "description"  | safeHTML }}</p>
+    </div>
+  </div>
+{{ end }}
+

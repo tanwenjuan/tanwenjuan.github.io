@@ -1,0 +1,69 @@
+{{ define "main" }}
+<main class="main list" role="main">
+    <!-- 确保只渲染一次 Biography 内容 -->
+    {{ $biography := index (where .Site.RegularPages "Title" "Biography") 0 }}
+    {{ if $biography }}
+        <!-- 渲染 Biography 页面内容 -->
+        <section id="biography" class="biography-section">
+            <div class="container">
+                <div class="row">
+                    <!-- 左侧：头像和联系方式 -->
+                    <div class="col-md-4 left-section">
+                        <div class="bio-image">
+                            <img src="{{ $biography.Params.image }}" alt="Profile Photo">
+                        </div>
+                        <div class="contact-info">
+                            <h4>Contact Info</h4>
+                            <ul>
+                                {{ range $biography.Params.contact }}
+                                    <li>{{ .label }}: <a href="{{ .url }}" target="_blank">{{ .value }}</a></li>
+                                {{ end }}
+                            </ul>
+                            {{ with $biography.Params.cv }}
+                                <div class="cv-link">
+                                    <a class="btn-cv" href="{{ .url | relURL }}" target="_blank">{{ .label }}</a>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <!-- 右侧：自我介绍 -->
+                    <div class="col-md-8 right-section">
+                        <h2><a href="{{ $biography.Permalink }}">{{ $biography.Title }}</a></h2>
+                        <p>{{ $biography.Params.lead  | markdownify }}</p>
+                        <div class="bio-description">
+                            {{ $biography.Content }} <!-- 渲染 Biography 页面内容 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<hr class="biography-divider">
+    {{ end }}
+
+    <!-- 渲染主页的其他内容，按其他模板渲染 -->
+    {{ range .Site.RegularPages }}
+        {{ if ne .Title "Biography" }} <!-- 排除 Biography 页面 -->
+            <section class="page-summary">
+                <h2><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></h2>
+                <div>{{ .Summary | safeHTML}}</div>
+            </section>
+        {{ end }}
+    {{ end }}
+	{{ with .Params.project }}
+	<section id="project" class="project-section" style="margin-top: 40px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="{{ .image }}" alt="Project Image" class="project-image" style="max-width: 100%; max-height: 250px;">
+				</div>
+				<div class="col-md-6">
+					<h3>{{ .title }}</h3>
+					<p>{{ .description }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	{{ end }}
+</main>
+{{ partial "pagination.html" . }}
+{{ end }}
