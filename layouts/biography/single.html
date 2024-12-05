@@ -1,0 +1,39 @@
+<div class="biography-page">
+	<div class="container">
+	  <div class="row">
+		<!-- 左侧区域 -->
+		<div class="col-md-4">
+		  <div class="bio-image">
+			{{ with .Params.image }}
+			<img src="{{ . | relURL }}" alt="Profile Picture" class="profile-picture" />
+			{{ end }}
+		  </div>
+		  <div class="contact-info">
+			<h4>Contact</h4>
+			<ul>
+			  {{ range .Params.contact }}
+			  <li>
+				<strong>{{ .label }}:</strong> 
+				<a href="{{ .url }}" target="_blank">{{ .value }}</a>
+			  </li>
+			  {{ end }}
+			</ul>
+		  </div>
+		  {{ with .Params.cv }}
+		  <a href="{{ .url | relURL }}" class="btn btn-cv">{{ .label }}</a>
+		  {{ end }}
+		</div>
+  
+		<!-- 右侧区域 -->
+		<div class="col-md-8">
+		  <div class="bio-lead">
+			<h2>{{ .Title }}</h2>
+			<p>{{ .Params.lead }}</p>
+		  </div>
+		  <div class="bio-description">
+			{{ .Content }}
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>

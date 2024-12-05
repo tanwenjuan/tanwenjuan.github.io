@@ -1,0 +1,83 @@
+{{ define "main" }}
+ {{ if eq .Params.layout "biography" }}
+ <div class="container">
+	<!-- Biography Section -->
+	<section id="biography" class="biography-section">
+	  <div class="row">
+		<!-- 左侧：头像和联系方式 -->
+		<div class="col-md-4 left-section">
+		  <div class="bio-image">
+			<img src="{{ .Params.image }}" alt="Profile Photo">
+		  </div>
+		  <div class="contact-info">
+			<h4>Contact Info</h4>
+			<ul>
+			  {{ range .Params.contact }}
+				<li>{{ .label }}: <a href="{{ .url }}" target="_blank">{{ .value }}</a></li>
+			  {{ end }}
+			</ul>
+			{{ with .Params.cv }}
+			  <div class="cv-link">
+				<a class="btn-cv" href="{{ .url | relURL }}" target="_blank">{{ .label }}</a>
+			  </div>
+			{{ end }}
+		  </div>
+		</div>
+		<!-- 右侧：自我介绍 -->
+		<div class="col-md-8 right-section">
+		  <h2>{{ .Title }}</h2>
+		  <p>{{ .Params.lead  | markdownify }}</p>
+		  <div class="bio-description">
+			{{ .Content }} <!-- 这里渲染 Markdown 内容 -->
+		  </div>
+		</div>
+	  </div>
+	</section>
+  
+	<!-- 其他部分：保持单栏布局 -->
+	<div class="row">
+	<section id="education" class="col-md-6 education-left-section">
+		<div class="indented">		
+			<h2>Main Course Grade</h2>
+			<p>{{ .Params.experience  | markdownify  }}</p> <!-- 通过 .Params 引入工作经验部分的内容 -->
+		</div>
+
+	</section>
+	
+	<section id="Main Course Grade" class="single-column-section">
+		<div class="indented">
+			<h2>Education</h2>
+			<p>{{ .Params.education | markdownify  | safeHTML }}</p>
+		  </div>
+	</section>
+  </div>
+  </div>
+{{ else }}
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">{{ .Title }}</h1>
+			{{- with .Params.lead }}
+			<p class="post__lead">{{ . }}</p>
+			{{- end }}
+			{{ with partial "post_meta.html" . -}}
+			<div class="post__meta meta">{{ . }}</div>
+			{{- end }}
+		</header>
+		{{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
+		{{- partial "post_toc.html" . -}}
+		<div class="content post__content clearfix">
+			{{ .Content }}
+		</div>
+		{{- if .Params.tags }}
+		<footer class="post__footer">
+			{{ partial "post_tags.html" . }}
+		</footer>
+		{{- end }}
+	</article>
+</main>
+{{ partial "authorbox.html" . }}
+{{ partial "pager.html" . }}
+{{ partial "comments.html" . }}
+{{ end }}
+{{end}}

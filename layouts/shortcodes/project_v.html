@@ -1,0 +1,43 @@
+{{ if .Get "separator" }}
+  <div class="initial row project with-separator">
+    <hr> <!-- 这里插入分割线 -->
+    <div class="col-md-4 left-section">
+      <video id="myVideo" controls class="img-fluid project-video">
+        <source src="{{ .Get "video" }}" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+    </div>
+    <div class="col-md-8 right-section">
+      <h3>{{ .Get "title" }}</h3>
+      <p class="no-margin">{{ .Get "authors"   | safeHTML }}</p>
+      <p class="no-margin">{{ .Get "description"  | safeHTML }}</p>
+    </div>
+  </div>
+{{ else }}
+  <div class="initial row project without-separator">
+    <div class="col-md-4 left-section">
+      <video id="myVideo" controls class="img-fluid project-video">
+        <source src="{{ .Get "video" }}" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+    </div>
+    <div class="col-md-8 right-section">
+      <h3>{{ .Get "title" }}</h3>
+      <p class="no-margin">{{ .Get "authors"   | safeHTML }}</p>
+      <p class="no-margin">{{ .Get "description"  | safeHTML }}</p>
+    </div>
+  </div>
+{{ end }}
+
+<script>
+  var video = document.getElementById('myVideo');
+  
+  // 强制循环播放：当视频播放结束时，跳回开始并重新播放
+  video.addEventListener('ended', function() {
+    video.currentTime = 0;  // 重置播放进度到0
+    video.play();           // 重新开始播放
+  });
+
+  // 确保视频在加载时自动播放
+  video.play();
+</script>
