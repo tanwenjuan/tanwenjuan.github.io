@@ -1,0 +1,29 @@
+/* custom.css */
+
+.bio-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .bio-photo {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .bio-photo img {
+    width: 100%;
+    max-width: 300px;  /* 你可以根据需要调整图片的最大宽度 */
+    border-radius: 8px;  /* 可选：圆角效果 */
+  }
+  
+  .bio-text {
+    flex: 2;
+  }
+  
+  .bio-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }

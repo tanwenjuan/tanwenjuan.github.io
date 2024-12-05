@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Customization - My New Hugo Site</title>
+	<title>Research - Wenjuan Tan</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Describes common Mainroad theme configuration parameters that can be adjusted via config file or via Front Matter section.">
+	<meta name="description" content="A brief introduction about my academic background, research interests, and future career aspirations.">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -16,7 +16,8 @@
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
-		
+
+	<link rel="stylesheet" href="/css/custom.css">
 </head>
 <body class="body">
 	<div class="container container--outer">
@@ -24,9 +25,9 @@
 	<div class="container header__container">
 		
 	<div class="logo">
-		<a class="logo__link" href="/" title="My New Hugo Site" rel="home">
+		<a class="logo__link" href="/" title="Wenjuan Tan" rel="home">
 			<div class="logo__item logo__text">
-					<div class="logo__title">My New Hugo Site</div>
+					<div class="logo__title">Wenjuan Tan</div>
 					
 				</div>
 		</a>
@@ -38,37 +39,23 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/getting-started/">
+			<a class="menu__link" href="/docs/biography/">
 				
-				<span class="menu__text">Getting started</span>
+				<span class="menu__text">Biography</span>
 				
 			</a>
 		</li>
 		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/docs/customization/">
 				
-				<span class="menu__text">Customization</span>
+				<span class="menu__text">Research</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/faq/">
+			<a class="menu__link" href="/docs/contact/">
 				
-				<span class="menu__text">FAQ</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/post/basic-elements/">
-				
-				<span class="menu__text">Basic Elements</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/about/">
-				
-				<span class="menu__text">About</span>
+				<span class="menu__text">Publications</span>
 				
 			</a>
 		</li>
@@ -83,16 +70,16 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Customization</h1>
-			<p class="post__lead">Describes common Mainroad theme configuration parameters that can be adjusted via config file or via Front Matter section.</p>
+			<h1 class="post__title">Research</h1>
+			<p class="post__lead">I am a master’s student at Tsinghua University, where my research focuses on the intersection of AI for Science, AI &#43; Healthcare, and Large Language Models (LLMs). I have been fortunate to work under the guidance of Prof. Yang Liu, investigating the application of artificial intelligence in scientific discovery and healthcare innovation.Before pursuing my master&#39;s, I completed a dual bachelor’s degree in Computer Science &amp; Applications and Mechanical Engineering at Shanghai Jiao Tong University, where I was part of the prestigious Qian Xuesen Honors Program. During my time at SJTU, I conducted robotics research under Prof. Kai Xu and was recognized with several academic honors, including the Chang Hong Technology Innovation Scholarship (Top 10) and the Fan Xuji Scholarship (Top 15). I was also selected for the Zhiyuan Engineering Honor Program (Top 5%), a highly competitive program for top engineering students.In addition to my academic work, I have gained hands-on experience as an intern at Penn Medicine, collaborating with Prof. Jayram Udunpa on medical data analysis, which has further deepened my interest in the integration of AI and healthcare.I am passionate about exploring how advanced AI technologies can contribute to scientific progress and improve healthcare outcomes, and I aim to continue pursuing this research in my future career.</p>
 			
 		</header>
 		
 		
 		<div class="content post__content clearfix">
-			<p>Customization page describes common Mainroad configuration parameters which can be specified via configuration file or
-via Front Matter section. That includes logo section tuning, adding a sidebar with widgets, adjusting highlight color,
-and more.</p>
+			<h2 id="about-me">About Me</h2>
+<p>{{ block &ldquo;main&rdquo; . }}</p>
+<!-- raw HTML omitted -->
 <p>This section will mainly cover customization settings that are unique to this theme. If something is not covered here,
 there&rsquo;s a good chance it is covered somewhere in <a href="https://gohugo.io/documentation/">Hugo docs</a>.</p>
 <h3 id="logo">Logo</h3>
@@ -354,7 +341,7 @@ Our href font link:</p>
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2024 My New Hugo Site.
+			&copy; 2024 Wenjuan Tan.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

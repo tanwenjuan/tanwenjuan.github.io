@@ -44,8 +44,9 @@ html {
 body {
 	margin: 0;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: Roboto;
 	font-size: 14px;
-	font-size: .875rem;
+	font-size: 1.0rem;
 	line-height: 1.6;
 	word-wrap: break-word;
 	background: #f7f7f7;
@@ -872,7 +873,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .list__title {
 	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 1.75rem;
 }
 
 .list__meta {
@@ -1316,3 +1317,288 @@ textarea {
 		font-size: .6875rem;
 	}
 }
+/* 页面整体布局 */
+.biography-page {
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  padding: 10px 15px;
+}
+
+/* 容器 */
+.container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 行布局（双栏） */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* 左侧区域（头像和联系方式） */
+.left-section {
+  flex: 1;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: none;
+  text-align: center;
+}
+
+.bio-image img {
+	width: 280px; /* 或者适合的尺寸 */
+	height: auto; /* 保持比例 */
+	border-radius: 0%; /* 使图片变为圆形 */
+	object-fit: cover; /* 确保图片填充容器 */
+  }
+
+.contact-info h4 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-info strong {
+  font-weight: bold;
+}
+
+.contact-info a {
+  color: #1e53ff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.cv-link {
+  margin-top: 20px;
+}
+
+.cv-link .btn-cv {
+  padding: 10px 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cv-link .btn-cv:hover {
+  background-color: #777;
+}
+
+/* 右侧区域（自我介绍等） */
+.right-section {
+  flex: 2;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: none;
+  text-align: justify; /* 两端对齐 */
+  text-align-last: left; 
+  margin-right: 25px;
+}
+
+/* Education之后的内容（单栏布局） */
+.single-column .row {
+  display: block;  /* 改为单栏布局 */
+}
+
+.single-column .left-section,
+.single-column .right-section {
+  width: 100%; /* 左右两侧都变为宽度100% */
+  margin: 0 0;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin: 0;  /* 移除外边距 */
+  padding: 0; /* 移除内边距 */
+}
+
+.bio-lead h2 {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin: 0;  /* 移除外边距 */
+  padding: 0; /* 移除内边距 */
+}
+
+.bio-lead p {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 0px;
+  font-style: italic;
+  margin-top: 0px;
+}
+
+.bio-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* 响应式设计：适应不同设备 */
+@media (max-width: 768px) {
+  .bio-image img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* 调整 biography-divider 为更粗的横线 */
+.biography-divider {
+    height: 2px;  /* 设置为更粗的横线 */
+    margin-top: 20px;  /* 控制上方间距 */
+    margin-bottom: 40px;  /* 控制下方间距 */
+    background: #888;  /* 可以设置颜色为深色，或者使用你自己定义的颜色 */
+    border: 0;
+}
+
+/* 页面整体布局 */
+.project-page {
+	background-color: #f9f9f9;
+	font-family: 'Arial', sans-serif;
+	color: #333;
+	padding: 10px 15px;
+  }
+  
+  /* 容器 */
+  .container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+  }
+  
+  /* 行布局（双栏） */
+  .row.project {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 30px;
+  }
+  
+  /* 左侧区域（图片展示） */
+  .left-section {
+	flex: 1;
+	background-color: transparent;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: none;
+	text-align: center;
+  }
+  
+  .left-section img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 0px;
+	object-fit: cover; /* 保持图片的良好显示 */
+  }
+  
+  /* 右侧区域（项目标题和描述） */
+  .right-section {
+	flex: 2;
+	background-color: transparent;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: none;
+  }
+  
+  .right-section h3 {
+	font-size: 24px;
+	color: #000;
+	margin-bottom: 15px;
+  }
+  
+  .right-section p {
+	font-size: 16px;
+	color: #000;
+	line-height: 1.6;
+  }
+  
+  /* 在小屏幕上，图片和文本不并排 */
+  @media (max-width: 767px) {
+	.row.project {
+	  flex-direction: column; /* 垂直排列 */
+	}
+  
+	.left-section,
+	.right-section {
+	  flex: none; /* 取消flex属性，使用默认布局 */
+	  width: 100%; /* 确保占满宽度 */
+	  margin-bottom: 15px;
+	}
+  
+	.left-section img {
+	  width: 100%; /* 确保图片在小屏幕上占满宽度 */
+	  margin-bottom: 15px; /* 图片和文字之间的间距 */
+	}
+  }
+
+.underline-italic {
+	text-decoration: underline;
+	font-style: italic;
+}
+
+  .indented {
+	padding-left: 2em;  /* 控制左侧缩进 */
+	padding-top: 0;     /* 取消顶部内边距 */
+	padding-bottom: 0;  /* 取消底部内边距 */
+	margin-top: 0;      /* 取消顶部外边距 */
+	margin-bottom: 0;   /* 取消底部外边距 */
+	line-height: 1.5;   /* 行间距设置 */
+  }
+  
+  .indented p {
+	margin: 0.2em 0; /* 设置段落间距为 0.5em，控制段落间距离 */
+	margin-top: 0;      /* 取消段落顶部间距 */
+	margin-bottom: 0em; /* 控制段落底部间距 */
+
+  }
+  
+  .indented strong {
+	display: block; /* 强制标题独占一行 */
+	margin-top: 0.5em; /* 标题与上方段落的间距 */
+	margin-bottom: 0.5em; /* 标题与下方段落的间距 */
+  }
+  
+  .indented br {
+	display: block; /* 让 <br> 换行生效 */
+	margin: 0.3em 0; /* 设置换行符上下间距 */
+  }
+
+  .education-left-section {
+	flex: 1;
+	background-color: transparent;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: none;
+	text-align: left;
+  }
+/* 带分割线的项目 */
+.project.with-separator hr {
+	border: none; /* 移除默认边框 */
+	height: 1px; /* 设置高度 */
+	background-color: black; /* 设置背景颜色为黑色 */
+	margin: 20px 0; /* 设置上下间距 */
+  }
+  
+  /* 不带分割线的项目 */
+  .project.without-separator hr {
+	display: none; /* 隐藏分割线 */
+  }
+
+  .no-margin {
+	margin: 0;
+	padding: 0;
+  }
